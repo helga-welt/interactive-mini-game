@@ -1,0 +1,1 @@
+*,*:before,*:after{box-sizing:border-box}body{margin:0;overflow:hidden;background-color:#ccf;color:#006;font-family:sans-serif}.controls,.scoreboard,.board{width:clamp(300px,90vw,500px)}@media(max-height:750px){body{overflow-y:auto}}
