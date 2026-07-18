@@ -1,0 +1,49 @@
+$content-width: clamp(300px, 90vw, 500px);
+
+// colors
+$bg-main: #0b1331;
+$text-primary: #fff;
+$text-secondary: #bfc7e8;
+$primary: #3f8dff;
+$secondary: #6366f1;
+$accent: #c64cff;
+$success: #57e274;
+$danger: #ff6666;
+$player-color: #57e274;
+$computer-color: #ff6767;
+$background-gradient: radial-gradient(
+                circle at top,
+                #273b80 0%,
+                #141e4a 30%,
+                #0b1331 70%,
+                #070d24 100%
+);
+
+// glass
+$glass-gradient: linear-gradient(
+                180deg,
+                rgba(28, 42, 98, .95),
+                rgba(22, 33, 76, .95)
+);
+
+$glass-bg: rgba(20, 32, 74, .75);
+$glass-border: rgba(255,255,255,.08);
+
+// radius
+$radius-sm: 12px;
+$radius-md: 16px;
+$radius-lg: 26px;
+$radius-xl: 28px;
+
+// shadows
+$shadow-card:
+        0 25px 60px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.08);
+$shadow-button:
+        0 18px 40px rgba(90,120,255,.35);
+$transition-fast: .2s ease;
+$transition: .25s ease;
+
+// breakpoints
+$mobile: 510px;
+$tablet: 768px;

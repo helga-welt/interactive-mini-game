@@ -1,0 +1,110 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.controls {
+  @include glass-card;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin: 10px auto;
+  padding: 15px 30px;
+  border-radius: $radius-lg;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+  color: $text-secondary;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+input {
+  height: 40px;
+  padding: 0 20px;
+  border: 1px solid $glass-border;
+  border-radius: $radius-md;
+  outline: none;
+  background: rgba(8, 16, 44, .75);
+  color: $text-primary;
+  font-size: 1rem;
+  transition: .25s ease;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, .35);
+  }
+
+  &:hover {
+    border-color: rgba(98, 154, 255, .45);
+  }
+
+  &:focus {
+    border-color: #5d8dff;
+    box-shadow: 0 0 0 4px rgba(93, 141, 255, .18);
+  }
+}
+
+.start-btn {
+  @include flex-center;
+  @include gradient-button;
+  @include transition;
+
+  gap: 12px;
+  height: 40px;
+  padding: 0 30px;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  color: $text-primary;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: $shadow-button;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-3px);
+    filter: brightness(1.05);
+    box-shadow: 0 24px 48px rgba(90, 120, 255, .55);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(.98);
+  }
+
+  &:disabled {
+    opacity: .55;
+    cursor: default;
+    box-shadow: none;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+@include mobile {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .start-btn {
+    width: 100%;
+  }
+}
+
+@include phone {
+  .controls {
+    gap: 10px;
+  }
+}

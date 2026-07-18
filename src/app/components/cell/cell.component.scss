@@ -1,0 +1,108 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+:host {
+  display: block;
+}
+
+.cell {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  background: linear-gradient(
+                  145deg,
+                  #2b63ff,
+                  #1948d7
+  );
+  box-shadow:
+          inset 0 1px 1px rgba(255, 255, 255, .18),
+          inset 0 -3px 8px rgba(0, 0, 0, .18),
+          0 8px 18px rgba(0, 0, 0, .22);
+  transition:
+          transform .2s ease,
+          background .25s ease,
+          box-shadow .25s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, .18),
+                    transparent 55%
+    );
+    opacity: .9;
+  }
+
+  &:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+            inset 0 1px 1px rgba(255, 255, 255, .22),
+            0 0 18px rgba(65, 140, 255, .35),
+            0 12px 28px rgba(0, 0, 0, .30);
+  }
+
+  &:active {
+    transform: scale(.96);
+  }
+
+  &.active {
+    background: linear-gradient(
+                    145deg,
+                    #ffd64a,
+                    #ffb400
+    );
+
+    box-shadow:
+            0 0 18px rgba(255, 205, 55, .70),
+            0 0 36px rgba(255, 205, 55, .45);
+    animation: pulse-cell .9s infinite;
+  }
+
+  &.player {
+    background: linear-gradient(
+                    145deg,
+                    #46e58d,
+                    #1ebd66
+    );
+    box-shadow:
+            0 0 20px rgba(54, 230, 131, .65),
+            0 0 40px rgba(54, 230, 131, .30);
+  }
+
+  &.computer {
+    background: linear-gradient(
+                    145deg,
+                    #ff6f83,
+                    #ff3d57
+    );
+    box-shadow:
+            0 0 20px rgba(255, 70, 95, .65),
+            0 0 40px rgba(255, 70, 95, .30);
+  }
+}
+
+@keyframes pulse-cell {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@include mobile {
+  .cell {
+    border-radius: 8px;
+  }
+}

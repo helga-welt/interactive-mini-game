@@ -1,0 +1,27 @@
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #ccccff;
+  color: #000066;
+  font-family: sans-serif;
+}
+
+.controls,
+.scoreboard,
+.board {
+  width: $content-width;
+}
+
+@media (max-height: 750px) {
+  body {
+    overflow-y: auto;
+  }
+}

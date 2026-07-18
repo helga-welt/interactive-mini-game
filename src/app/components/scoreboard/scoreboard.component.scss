@@ -1,0 +1,150 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.scoreboard {
+  @include glass-card;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin: 10px auto;
+  padding: 10px 30px;
+  border-radius: $radius-xl;
+}
+
+.player-side,
+.computer-side {
+  display: flex;
+  align-items: center;
+}
+
+.player-side {
+  justify-content: flex-start;
+  padding-right: 28px;
+}
+
+.computer-side {
+  justify-content: flex-end;
+  padding-left: 28px;
+}
+
+.avatar {
+  @include flex-center;
+
+  width: 60px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.avatar.player {
+  color: $player-color;
+  background: rgba($player-color, .08);
+  border: 2px solid rgba($player-color, .22);
+  box-shadow:
+          inset 0 0 18px rgba($player-color, .12);
+}
+
+.avatar.computer {
+  color: $computer-color;
+  background: rgba($computer-color, .08);
+  border: 2px solid rgba($computer-color, .22);
+  box-shadow:
+          inset 0 0 18px rgba($computer-color, .12);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.label {
+  margin-bottom: 8px;
+  color: $player-color;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+.computer-label {
+  color: $computer-color;
+}
+
+.score {
+  color: $player-color;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 0 18px rgba($player-color, .25);
+}
+
+.computer-score {
+  color: $computer-color;
+  text-shadow: 0 0 18px rgba($computer-color, .25);
+}
+
+.vs {
+  @include flex-center;
+
+  width: 70px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .05);
+  color: $text-primary;
+  font-size: 1.8rem;
+  font-weight: 800;
+  box-shadow:
+          inset 0 0 20px rgba(255, 255, 255, .04);
+}
+
+@include mobile {
+  .player-side,
+  .computer-side {
+    padding: 0;
+  }
+
+  .vs {
+    margin: auto;
+  }
+
+  .avatar {
+    width: 68px;
+    font-size: 2rem;
+  }
+
+  .score {
+    font-size: 3rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+}
+
+@include phone {
+  .scoreboard {
+    padding: 10px;
+  }
+
+  .avatar {
+    width: 40px;
+    font-size: 1rem;
+  }
+
+  .vs {
+    width: 40px;
+    font-size: 1rem;
+  }
+
+  .score {
+    font-size: .8rem;
+  }
+
+  .label {
+    font-size: .7rem;
+  }
+}

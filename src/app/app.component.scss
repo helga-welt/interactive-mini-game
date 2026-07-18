@@ -1,0 +1,109 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: $background-gradient;
+  color: $text-primary;
+  font-family:
+          Inter,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(12px, 1.5vh, 28px);
+  overflow: hidden;
+  padding:
+          clamp(12px, 2vh, 36px)
+          clamp(12px, 2vw, 28px);
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  text-align: center;
+  background: linear-gradient(
+                  90deg,
+                  #59b4ff,
+                  #6f89ff,
+                  #b84cff
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin-top: 12px;
+  color: $text-secondary;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.orientation-warning {
+  display: none;
+}
+
+@include mobile {
+  .container {
+    padding: 28px 16px 40px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+  }
+}
+
+@include phone {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    margin-top: 5px;
+    font-size: .9rem;
+    letter-spacing: -1px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 850px) {
+  .container {
+    display: none;
+  }
+
+  .orientation-warning {
+    @include flex-center;
+
+    position: fixed;
+    inset: 0;
+    padding: 2rem;
+    background: $bg-main;
+    color: $text-primary;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 9999;
+  }
+}

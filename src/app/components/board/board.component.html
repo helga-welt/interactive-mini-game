@@ -1,0 +1,9 @@
+<div class="board">
+    @for (cell of gameService.board(); track cell.id) {
+        <app-cell
+                [cell]="cell"
+                (cellClick)="gameService.playerClick($event)">
+        </app-cell>
+
+    }
+</div>

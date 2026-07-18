@@ -1,0 +1,53 @@
+@use "variables" as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin glass-card($blur: 16px) {
+  background: $glass-gradient;
+  border: 1px solid $glass-border;
+  backdrop-filter: blur($blur);
+  box-shadow: $shadow-card;
+}
+
+@mixin gradient-button {
+  background: linear-gradient(
+                  135deg,
+                  $primary,
+                  $secondary,
+                  $accent
+  );
+}
+
+@mixin transition(
+  $properties: (transform, box-shadow, filter),
+  $duration: .2s,
+  $timing: ease
+) {
+  $transitions: ();
+
+  @each $property in $properties {
+    $transitions: append(
+                    $transitions,
+                    #{$property} #{$duration} #{$timing},
+                    comma
+    );
+  }
+
+  transition: $transitions;
+}
+
+@mixin mobile {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
