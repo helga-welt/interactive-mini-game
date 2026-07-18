@@ -1,13 +1,13 @@
 # Interactive Mini Game
 
-Simple game built with Angular 20.
+Simple game built with Angular 19.
 
 Live Demo:
 https://helga-welt.github.io/interactive-mini-game/
 
 ## Features
 
-- Angular 20 Standalone Components
+- Angular 19 Standalone Components
 - Signals
 - inject()
 - input.required()
@@ -18,7 +18,7 @@ https://helga-welt.github.io/interactive-mini-game/
 
 ## Technologies
 
-- Angular 20
+- Angular 19
 - TypeScript
 - SCSS
 
