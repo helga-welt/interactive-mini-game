@@ -2,6 +2,9 @@
 
 Simple game built with Angular 20.
 
+Live Demo:
+https://helga-welt.github.io/interactive-mini-game/
+
 ## Features
 
 - Angular 20 Standalone Components
