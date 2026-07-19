@@ -20,7 +20,7 @@ body {
   width: $content-width;
 }
 
-@media (max-height: 750px) {
+@media (max-height: 900px) {
   body {
     overflow-y: auto;
   }

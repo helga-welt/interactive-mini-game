@@ -89,7 +89,7 @@ main {
   }
 }
 
-@media (orientation: landscape) and (max-height: 850px) {
+@media (orientation: landscape) and (max-height: 600px) {
   .container {
     display: none;
   }
